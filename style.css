@@ -58,6 +58,7 @@ body {
   width: 60%;
   border: 4px dashed #1FB264;
   position: relative;
+  object-fit: contain;
 }
 
 .image-dropping,
@@ -87,10 +88,10 @@ body {
 }
 
 .file-upload-image {
-  max-height: 200px;
-  max-width: 200px;
+  max-height: 30%;
+  max-width: 30%;
   margin: auto;
-  padding: 20px;
+  padding: 10px;
 }
 
 .remove-image {
@@ -159,9 +160,6 @@ body {
 	}
 	.navbar-brand {
 		font-size: 2.5rem;
-	}
-	.file-upload{
-	height: 70vw;
 	}
 }
 

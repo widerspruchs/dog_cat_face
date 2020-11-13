@@ -5,9 +5,9 @@ body {
 
 .file-upload {
   background-color: #ffffff;
-  width: 600px;
-  padding: 10% 0;
+  padding: 10% 3%;
   margin: 0 auto; 
+  
 }
 
 .file-upload-btn {
@@ -54,7 +54,8 @@ body {
 }
 
 .image-upload-wrap {
-  margin-top: 20px;
+  margin: 0 auto;
+  width: 60%;
   border: 4px dashed #1FB264;
   position: relative;
 }
@@ -264,6 +265,7 @@ body {
 	width:20%;
 	text-align: left;
 	height: 2rem;
+	font-size: 1.5rem;
 }
 
 #label-container{

@@ -80,6 +80,7 @@
 
 					reader.onload = function (e) {
 						$('.image-upload-wrap').hide();
+						$('#loading').show();
 						$('.file-upload-image').attr('src', e.target.result);
 						$('.file-upload-content').show();
 						$('.image-title').html(input.files[0].name);
@@ -89,6 +90,7 @@
 					init().then(() => {
 						console.log('Hello');
 						predict();
+						$('#loading').hide();
 					});
 				} else {
 					removeUpload();
@@ -122,6 +124,12 @@
 			</div>
 			<div class="file-upload-content">
 				<img class="file-upload-image" id="face-image" src="#" alt="your image" />
+				<div id="loading" class="animated bounce">
+					<div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+				 </div>
+				 <p class="text-center">🤖 AI is analyzing your picture</p>
+            </div>	
 				<p class="result-message"></p>
 				<div id="label-container" class="d-flex flex-column justify-content-around"></div>
 				
@@ -129,9 +137,12 @@
                 <div class="addthis_inline_share_toolbox"></div>
             
 				<div class="pt-3 image-title-wrap">
-					<button type="button" onclick="removeUpload()" class="mt-5 remove-image">
+					<!--<button type="button" onclick="removeUpload()" class="mt-5 remove-image">
 						Remove <span class="image-title">Uploaded Image</span>
-					</button>
+					</button>-->
+					<button type="button p-2" class="try-again-btn" onclick="window.location.reload();">
+                    <span class="try-again-text">Try again</span>
+                	</button>
 				</div>
 			</div>
 		</div>

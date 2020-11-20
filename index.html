@@ -13,7 +13,7 @@
 			crossorigin="anonymous"
 		/>
 
-		<title>🤖 Dog or cat face ?</title>
+		<title>Animal face test </title>
 		<link rel="stylesheet" href="style.css" />
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -24,7 +24,7 @@
 
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-light nav-distance">
-			<a class="navbar-brand" href="#">🤖 Dog or cat face ?</a>
+			<a class="navbar-brand" href="#">🤖 Animal face recognition with AI </a>
 			<button
 				class="navbar-toggler"
 				type="button"
@@ -58,7 +58,7 @@
 
 		<section class="section">
 			<h1 class="title">Animal face test</h1>
-			<h2 class="subtitle">Does my face look like 🐶 or 🐱 ?</h2>
+			<h2 class="subtitle">🤖 Which animal do I look like? 🤖</h2>
 		</section>
 		<!-- YOUTUBE LINK REMPLACER PAR QQCHOSE D'AUTRE		
 <section class="youtube">
@@ -194,7 +194,8 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
 			// https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 
 			// the link to your model provided by Teachable Machine export panel
-			const URL = 'https://teachablemachine.withgoogle.com/models/YLePjLtGy/';
+			//const URL = 'https://teachablemachine.withgoogle.com/models/YLePjLtGy/';
+			const URL = 'https://teachablemachine.withgoogle.com/models/dWYRISjp8/';
 
 			let model, webcam, labelContainer, maxPredictions;
 
@@ -226,14 +227,35 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
 				var photo_image = document.getElementById('face-image');
 				const prediction = await model.predict(photo_image, false);
 				prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
-				console.log(prediction[0].className)
+				console.log(prediction)
 				var resultMessage;
 				switch (prediction[0].className) {
-						case 'Dog':
+						case 'dog':
 							resultMessage = "You look like a cute 🐶!";
 							break;
-						case 'Cat':
+						case 'cat':
 							resultMessage = "You look like a cute 🐱!";
+							break;
+						case 'deer':
+							resultMessage = "You look like a cute 🦌";
+							break;
+						case 'tiger':
+							resultMessage = "You look like a cute 🐯!";
+							break;
+						case 'squirrel':
+							resultMessage = "You look like a cute 🐿️!";
+							break;
+						case 'pig':
+							resultMessage = "You look like a cute 🐷!";
+							break;
+						case 'horse':
+							resultMessage = "You look like a cute 🐴!";
+							break;
+						case 'monkey':
+							resultMessage = "You look like a cute 🐵!";
+							break;
+						case 'rabbit':
+							resultMessage = "You look like a cute 🐰!";
 							break;
 						default:
 							resultMessage = "Unknown... you broke me 🤖!";
@@ -252,13 +274,41 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
 					var LabelTitle;
 					
 					switch (prediction[i].className) {
-						case 'Dog':
+						case 'dog':
 							//resultMessage = "You look like a cute 🐶!";
-							LabelTitle = "🐶";
+							LabelTitle = "Dog 🐶";
 							break;
-						case 'Cat':
+						case 'cat':
 							//resultMessage = "You look like a cute 🐱!";
-							LabelTitle = "🐱";
+							LabelTitle = "Cat 🐱";
+							break;
+						case 'deer':
+							//resultMessage = "You look like a cute 🐶!";
+							LabelTitle = "Deer 🦌";
+							break;
+						case 'tiger':
+							//resultMessage = "You look like a cute 🐶!";
+							LabelTitle = "TIger 🐯";
+							break;
+						case 'squirrel':
+							//resultMessage = "You look like a cute 🐶!";
+							LabelTitle = "Squirrel 🐿️";
+							break;
+						case 'pig':
+							//resultMessage = "You look like a cute 🐶!";
+							LabelTitle = "Piggy 🐷";
+							break;
+						case 'horse':
+							//resultMessage = "You look like a cute 🐶!";
+							LabelTitle = "Horse 🐴";
+							break;
+						case 'monkey':
+							//resultMessage = "You look like a cute 🐶!";
+							LabelTitle = "Monkey 🐵";
+							break;
+						case 'rabbit':
+							//resultMessage = "You look like a cute 🐶!";
+							LabelTitle = "Rabbit 🐰";
 							break;
 						default:
 							//resultMessage = "Unknown... you broke me 🤖!";
